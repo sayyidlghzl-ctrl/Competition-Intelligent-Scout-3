@@ -100,7 +100,7 @@ Project ini dibuat sebagai media digital untuk mendukung pelaksanaan **Competiti
 ## 👨‍💻 Developer
 
 <p align="center">
-  <img src="" width="150" alt="Foto Muhammad Sayyid Ghifari">
+  <img src="WhatsApp Image 2026-08-19 at 20.01.42.jpeg" width="150" alt="Foto Muhammad Sayyid Ghifari">
 </p>
 
 <p align="center">
