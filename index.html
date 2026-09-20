@@ -201,6 +201,152 @@
             animation-direction: reverse;
         }
 
+        .scout-child {
+            position: absolute;
+            bottom: 4vh;
+            left: -100px;
+            width: 72px;
+            height: 148px;
+            opacity: .2;
+            animation: scoutWalk 20s linear infinite;
+            will-change: transform;
+        }
+
+        .scout-child:nth-of-type(2) {
+            bottom: 12vh;
+            transform: scale(.72);
+            animation-duration: 25s;
+            animation-delay: -9s;
+        }
+
+        .scout-child:nth-of-type(3) {
+            bottom: 7vh;
+            transform: scale(.86);
+            animation-duration: 23s;
+            animation-delay: -16s;
+        }
+
+        .scout-head {
+            position: absolute;
+            top: 22px;
+            left: 23px;
+            width: 28px;
+            height: 31px;
+            border-radius: 48% 48% 45% 45%;
+            background: var(--lime);
+            box-shadow: inset -5px -2px 0 rgba(109, 27, 27, .12);
+        }
+
+        .scout-hat {
+            position: absolute;
+            top: 11px;
+            left: 16px;
+            width: 42px;
+            height: 18px;
+            border-radius: 50% 50% 35% 35%;
+            background: var(--green-dark);
+            box-shadow: 0 5px 0 -2px var(--green-dark);
+            z-index: 1;
+        }
+
+        .scout-body {
+            position: absolute;
+            top: 53px;
+            left: 16px;
+            width: 43px;
+            height: 53px;
+            border-radius: 12px 12px 8px 8px;
+            background: var(--green);
+            border: 3px solid rgba(255, 255, 255, .55);
+        }
+
+        .scout-body::before {
+            content: "";
+            position: absolute;
+            top: 3px;
+            left: 10px;
+            width: 15px;
+            height: 12px;
+            border-radius: 2px;
+            background: var(--lime);
+            transform: rotate(45deg);
+        }
+
+        .scout-arm,
+        .scout-leg {
+            position: absolute;
+            display: block;
+            width: 10px;
+            border-radius: 999px;
+            background: var(--green-dark);
+            transform-origin: top center;
+        }
+
+        .scout-arm {
+            top: 60px;
+            left: 10px;
+            height: 43px;
+            transform: rotate(24deg);
+            animation: scoutArm 1s ease-in-out infinite alternate;
+        }
+
+        .scout-leg {
+            top: 101px;
+            left: 23px;
+            height: 43px;
+            transform: rotate(12deg);
+            animation: scoutLeg 1s ease-in-out infinite alternate;
+        }
+
+        .scout-leg::after {
+            content: "";
+            position: absolute;
+            left: -5px;
+            bottom: -3px;
+            width: 22px;
+            height: 8px;
+            border-radius: 999px;
+            background: var(--green-dark);
+        }
+
+        .scout-arm:nth-child(5) {
+            left: 52px;
+            transform: rotate(-22deg);
+            animation-delay: -.5s;
+        }
+
+        .scout-leg:nth-child(7) {
+            left: 43px;
+            transform: rotate(-13deg);
+            animation-delay: -.5s;
+        }
+
+        @keyframes scoutWalk {
+            0% {
+                transform: translateX(-12vw) scale(.9);
+            }
+
+            48% {
+                transform: translateX(52vw) translateY(-12px) scale(1);
+            }
+
+            100% {
+                transform: translateX(112vw) scale(.9);
+            }
+        }
+
+        @keyframes scoutArm {
+            to {
+                transform: rotate(-28deg);
+            }
+        }
+
+        @keyframes scoutLeg {
+            to {
+                transform: rotate(-22deg);
+            }
+        }
+
         @keyframes scoutFloat {
             0% {
                 transform: translateY(0) translateX(0) rotate(0deg);
@@ -788,7 +934,35 @@
     </div>
 
     <!-- ANIMASI PRAMUKA MENGAMBANG -->
-    <div class="scout-bg" id="scoutBg" aria-hidden="true"></div>
+    <div class="scout-bg" id="scoutBg" aria-hidden="true">
+        <div class="scout-child">
+            <i class="scout-head"></i>
+            <i class="scout-hat"></i>
+            <i class="scout-body"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-leg"></i>
+            <i class="scout-leg"></i>
+        </div>
+        <div class="scout-child">
+            <i class="scout-head"></i>
+            <i class="scout-hat"></i>
+            <i class="scout-body"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-leg"></i>
+            <i class="scout-leg"></i>
+        </div>
+        <div class="scout-child">
+            <i class="scout-head"></i>
+            <i class="scout-hat"></i>
+            <i class="scout-body"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-arm"></i>
+            <i class="scout-leg"></i>
+            <i class="scout-leg"></i>
+        </div>
+    </div>
 
     <main class="page">
         <section class="container">
@@ -893,12 +1067,12 @@
             </div>
             <p class="wa-modal-sub">Pilih nomor WhatsApp yang ingin dihubungi.</p>
 
-            <a class="wa-contact" href="https://wa.me/62859113506385" target="_blank" rel="noopener">
+            <a class="wa-contact" href="https://wa.me/6281910793125" target="_blank" rel="noopener">
                 <span class="wa-contact-avatar">1</span>
                 <span class="wa-contact-info">
                     <span class="wa-contact-name">Panitia Utama</span>
                     <span class="wa-contact-role">Informasi perlombaan</span>
-                    <span class="wa-contact-number">+62 859-1135-06385</span>
+                    <span class="wa-contact-number">+62 819-1079-3125</span>
                     <span class="wa-contact-copy">Buka chat WhatsApp</span>
                 </span>
                 <span class="wa-contact-go">↗</span>
@@ -907,7 +1081,7 @@
             <a class="wa-contact" href="https://wa.me/6282118550966" target="_blank" rel="noopener">
                 <span class="wa-contact-avatar">2</span>
                 <span class="wa-contact-info">
-                    <span class="wa-contact-name">Panitia Cadangan</span>
+                    <span class="wa-contact-name">Wakil Panitia Utama</span>
                     <span class="wa-contact-role">Pendaftaran dan bantuan</span>
                     <span class="wa-contact-number">+62 821-1855-0966</span>
                     <span class="wa-contact-copy">Buka chat WhatsApp</span>
