@@ -7,7 +7,7 @@
     <meta name="description"
         content="Website resmi Competition Intelligent Scout 2 Ambalan Bhatara Rama, Dewi Shinta, Gugus Depan Ciamis 01-139 dan 01-140.">
     <title>CIS 2 | Bhatara Rama &amp; Dewi Shinta</title>
-     <link rel="icon" href="Proyek Baru 503 (logo cis there) [39A0A50].png" type="image/png">
+    <link rel="icon" href="Proyek Baru 503 (logo cis there) [39A0A50].png" type="image/png">
 
     <style>
         * {
@@ -17,13 +17,14 @@
         }
 
         :root {
-            --green-dark: #064e3b;
-            --green: #0f8f5b;
-            --green-light: #35c77a;
-            --lime: #d7f23f;
-            --yellow: #ffe66d;
+            --green-dark: #063b63;
+            --green: #16a66a;
+            --green-light: #6de0a0;
+            --blue: #087fba;
+            --blue-light: #2fc2e8;
+            --lime: #c8f36b;
             --white: #ffffff;
-            --text: #10352a;
+            --text: #07384d;
         }
 
         body.is-loading {
@@ -37,7 +38,7 @@
             display: grid;
             place-items: center;
             color: white;
-            background: linear-gradient(145deg, #064e3b, #0f8f5b 60%, #35c77a);
+            background: linear-gradient(145deg, #042a50, #087fba 58%, #16a66a);
             transition: opacity .5s ease, visibility .5s ease;
         }
 
@@ -52,6 +53,40 @@
             justify-items: center;
             gap: 16px;
             text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .loading-orbit {
+            position: absolute;
+            width: 190px;
+            height: 190px;
+            border: 1px solid rgba(255, 255, 255, .28);
+            border-radius: 50%;
+            animation: orbitSpin 5s linear infinite;
+        }
+
+        .loading-orbit::before,
+        .loading-orbit::after {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--lime);
+            box-shadow: 0 0 22px var(--lime);
+        }
+
+        .loading-orbit::before {
+            top: 12px;
+            left: 36px;
+        }
+
+        .loading-orbit::after {
+            right: 18px;
+            bottom: 34px;
+            background: var(--green-light);
+            box-shadow: 0 0 22px var(--green-light);
         }
 
         .loading-logo {
@@ -78,24 +113,37 @@
             text-transform: uppercase;
         }
 
+        .loading-progress {
+            width: min(250px, 70vw);
+            height: 5px;
+            overflow: hidden;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .loading-progress::after {
+            content: "";
+            display: block;
+            width: 45%;
+            height: 100%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, var(--lime), var(--green-light));
+            box-shadow: 0 0 15px var(--lime);
+            animation: loadingProgress 2s ease-in-out infinite;
+        }
+
         .welcome-widget {
             position: fixed;
-            right: 22px;
-            bottom: 22px;
-            z-index: 30;
+            inset: 0;
+            z-index: 90;
             display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            width: min(365px, calc(100vw - 28px));
-            padding: 17px 18px;
-            border: 1px solid rgba(255, 255, 255, .75);
-            border-radius: 18px;
-            color: var(--green-dark);
-            background: rgba(255, 255, 255, .97);
-            box-shadow: 0 18px 45px rgba(6, 78, 59, .25);
-            transform: translateY(24px);
-            opacity: 0;
-            visibility: hidden;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(3, 37, 67, .72);
+            backdrop-filter: blur(14px);
+            opacity: 1;
+            visibility: visible;
             transition: opacity .4s ease, transform .4s ease, visibility .4s ease;
         }
 
@@ -105,15 +153,30 @@
             visibility: visible;
         }
 
+        .welcome-panel {
+            position: relative;
+            width: min(480px, 100%);
+            padding: 38px 34px 34px;
+            border: 1px solid rgba(255, 255, 255, .72);
+            border-radius: 28px;
+            color: var(--green-dark);
+            background: linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(225, 250, 244, .96));
+            box-shadow: 0 30px 90px rgba(1, 30, 57, .4);
+            text-align: center;
+            animation: promptReveal .55s cubic-bezier(.2, .8, .2, 1) both;
+        }
+
         .welcome-icon {
             display: grid;
             place-items: center;
-            flex: 0 0 38px;
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, var(--yellow), var(--lime));
-            font-size: 19px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 16px;
+            border-radius: 20px;
+            color: white;
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            box-shadow: 0 12px 24px rgba(8, 127, 186, .25);
+            font-size: 30px;
         }
 
         .welcome-copy {
@@ -123,62 +186,60 @@
 
         .welcome-copy strong {
             display: block;
-            margin-bottom: 4px;
-            font-size: 15px;
+            margin-bottom: 8px;
+            color: var(--green-dark);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 26px;
         }
 
         .welcome-copy span {
-            color: #4a6b5c;
-            font-size: 13px;
+            display: block;
+            color: #416979;
+            font-size: 15px;
             line-height: 1.45;
         }
 
         .welcome-form {
             display: flex;
-            gap: 7px;
-            margin-top: 10px;
+            gap: 9px;
+            margin-top: 22px;
         }
 
         .welcome-input {
             min-width: 0;
             flex: 1;
-            padding: 8px 10px;
-            border: 1px solid rgba(6, 78, 59, .2);
-            border-radius: 9px;
+            padding: 14px 15px;
+            border: 2px solid rgba(8, 127, 186, .18);
+            border-radius: 13px;
             color: var(--green-dark);
             font: inherit;
-            font-size: 12px;
+            font-size: 15px;
             outline: none;
         }
 
         .welcome-input:focus {
-            border-color: var(--green);
-            box-shadow: 0 0 0 3px rgba(15, 143, 91, .12);
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px rgba(8, 127, 186, .12);
         }
 
         .welcome-submit {
-            padding: 8px 11px;
+            padding: 14px 18px;
             border: 0;
-            border-radius: 9px;
+            border-radius: 13px;
             color: white;
-            background: var(--green);
+            background: linear-gradient(135deg, var(--blue), var(--green));
             font: inherit;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 800;
             cursor: pointer;
         }
 
         .welcome-submit:hover {
-            background: var(--green-dark);
+            background: #063b63;
         }
 
         .welcome-close {
-            margin-left: auto;
-            border: 0;
-            color: #5c7a6c;
-            background: transparent;
-            font-size: 17px;
-            cursor: pointer;
+            display: none;
         }
 
         body {
@@ -187,9 +248,9 @@
             color: var(--text);
             overflow-x: hidden;
             background:
-                radial-gradient(circle at 15% 15%, rgba(255, 230, 109, .45), transparent 25%),
-                radial-gradient(circle at 90% 85%, rgba(53, 199, 122, .35), transparent 28%),
-                linear-gradient(135deg, #d8f54b 0%, #a9df42 35%, #43c779 70%, #08764d 100%);
+                radial-gradient(circle at 15% 15%, rgba(200, 243, 107, .45), transparent 25%),
+                radial-gradient(circle at 90% 85%, rgba(47, 194, 232, .3), transparent 28%),
+                linear-gradient(135deg, #bcecff 0%, #72d9cf 35%, #43c779 70%, #08764d 100%);
         }
 
         body::before,
@@ -332,7 +393,7 @@
             font-size: 9px;
             letter-spacing: 1.5px;
             margin-top: 3px;
-            color: var(--yellow);
+            color: var(--lime);
         }
 
         .eyebrow {
@@ -385,7 +446,7 @@
         }
 
         .ambalan-name span {
-            color: var(--yellow);
+            color: var(--lime);
         }
 
         .gudep-number {
@@ -408,7 +469,7 @@
         }
 
         h1 span {
-            color: var(--yellow);
+            color: var(--lime);
         }
 
         .tagline {
@@ -498,7 +559,7 @@
             place-items: center;
             border-radius: 12px;
             color: var(--green-dark);
-            background: linear-gradient(135deg, var(--yellow), var(--lime));
+            background: linear-gradient(135deg, var(--blue-light), var(--green-light));
             font-size: 18px;
         }
 
@@ -516,7 +577,7 @@
         .social button:focus-visible,
         .wa-contact:focus-visible,
         .wa-modal-close:focus-visible {
-            outline: 3px solid var(--yellow);
+            outline: 3px solid var(--lime);
             outline-offset: 3px;
         }
 
@@ -761,6 +822,34 @@
             }
         }
 
+        @keyframes orbitSpin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loadingProgress {
+            0% {
+                transform: translateX(-120%);
+            }
+
+            100% {
+                transform: translateX(260%);
+            }
+        }
+
+        @keyframes promptReveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px) scale(.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         @media (max-width: 600px) {
             .page {
                 padding: 28px 14px 22px;
@@ -799,9 +888,16 @@
                 gap: 10px;
             }
 
-            .welcome-widget {
-                right: 14px;
-                bottom: 14px;
+            .welcome-panel {
+                padding: 30px 20px 24px;
+            }
+
+            .welcome-form {
+                flex-direction: column;
+            }
+
+            .welcome-submit {
+                width: 100%;
             }
 
             .wa-contact-number {
@@ -814,25 +910,29 @@
 <body>
     <div class="loading-screen" id="loadingScreen" role="status" aria-label="Memuat halaman">
         <div class="loading-content">
+            <div class="loading-orbit" aria-hidden="true"></div>
             <img class="loading-logo" src="Proyek Baru 503 (logo cis there) [39A0A50].png"
                 alt="Logo Competition Intelligent Scout 2">
             <div class="loading-title">Competition Intelligent Scout 2</div>
             <div class="loading-status">Menyiapkan halaman</div>
+            <div class="loading-progress" aria-hidden="true"></div>
         </div>
     </div>
 
     <aside class="welcome-widget" id="welcomeWidget" aria-label="Sapaan untuk tamu" aria-live="polite">
-        <div class="welcome-icon" aria-hidden="true">⚜</div>
-        <div class="welcome-copy">
-            <strong id="welcomeTitle">Halo, tamu!</strong>
-            <span id="welcomeMessage">Boleh kenalan dulu? Tulis nama kamu.</span>
-            <form class="welcome-form" id="welcomeForm">
-                <input class="welcome-input" id="guestName" type="text" maxlength="30" placeholder="Nama kamu"
-                    autocomplete="name" required>
-                <button class="welcome-submit" type="submit">Sapa</button>
-            </form>
+        <div class="welcome-panel">
+            <div class="welcome-icon" aria-hidden="true">⚜</div>
+            <div class="welcome-copy">
+                <strong id="welcomeTitle">Selamat datang di CIS 2</strong>
+                <span id="welcomeMessage">Kenalan dulu, yuk. Isi nama kamu sebelum menjelajah halaman ini.</span>
+                <form class="welcome-form" id="welcomeForm">
+                    <input class="welcome-input" id="guestName" type="text" maxlength="30" placeholder="Tulis nama kamu"
+                        autocomplete="name" required autofocus>
+                    <button class="welcome-submit" type="submit">Masuk ke halaman</button>
+                </form>
+            </div>
+            <button class="welcome-close" id="welcomeClose" type="button" aria-label="Tutup sapaan">✕</button>
         </div>
-        <button class="welcome-close" id="welcomeClose" type="button" aria-label="Tutup sapaan">✕</button>
     </aside>
 
     <!-- ANIMASI PRAMUKA MENGAMBANG -->
@@ -969,7 +1069,6 @@
         const loadingScreen = document.getElementById("loadingScreen");
         const welcomeWidget = document.getElementById("welcomeWidget");
         const welcomeForm = document.getElementById("welcomeForm");
-        const welcomeClose = document.getElementById("welcomeClose");
         const guestName = document.getElementById("guestName");
         const welcomeTitle = document.getElementById("welcomeTitle");
         const welcomeMessage = document.getElementById("welcomeMessage");
@@ -977,7 +1076,6 @@
         document.body.classList.add("is-loading");
         window.setTimeout(() => {
             loadingScreen.classList.add("is-hidden");
-            document.body.classList.remove("is-loading");
             welcomeWidget.classList.add("is-visible");
             guestName.focus();
         }, 2000);
@@ -989,9 +1087,9 @@
             welcomeTitle.textContent = `Selamat datang, ${name}!`;
             welcomeMessage.textContent = "Senang bertemu denganmu. Silakan jelajahi informasi perlombaan kami.";
             welcomeForm.remove();
+            welcomeWidget.classList.remove("is-visible");
+            document.body.classList.remove("is-loading");
         });
-
-        welcomeClose.addEventListener("click", () => welcomeWidget.classList.remove("is-visible"));
 
         const scoutBg = document.getElementById("scoutBg");
         const scoutIcons = ["⚜", "✦", "♢", "⚑", "✧", "❖", "⚜", "✦"];
