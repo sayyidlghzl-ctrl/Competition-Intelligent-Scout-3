@@ -1,117 +1,66 @@
-# ⚜️ Competition Intelligent Scout 2
+# ⚜️ Competition Intelligent Scout 3
 
-**Competition Intelligent Scout 2 (CIS 2)** merupakan website informasi dan pusat akses kegiatan perlombaan Pramuka yang diselenggarakan oleh **Ambalan Bhatara Rama & Dewi Shinta**, Gugus Depan Ciamis **01-139 & 01-140**.
+**Competition Intelligent Scout 3 (CIS 3)** adalah website informasi dan pusat akses perlombaan Pramuka yang diselenggarakan oleh **Ambalan Bhatara Rama & Dewi Shinta**, Gugus Depan Ciamis **01-139 & 01-140**.
 
-Website ini dibuat dengan konsep **modern, responsif, dan interaktif** untuk memudahkan peserta mendapatkan informasi perlombaan, melakukan pendaftaran, serta menghubungi panitia.
+Halaman utama menyediakan akses cepat ke petunjuk perlombaan, formulir pendaftaran, media sosial, dan kontak panitia.
 
-> **“Kreasi dan Inovasi Praja Muda”**
+> **“mengukir prestasi berasama praja muda”**
 
----
+## Fitur
 
-## ✨ Fitur
+- Informasi **Juklak & Juknis Perlombaan** melalui halaman `juknis.html`
+- Formulir pendaftaran **Lomba Paskat**
+- Formulir pendaftaran **Lomba Mini Pionering**
+- Formulir pendaftaran **Lomba Dance Semaphore**
+- Modal **Hubungi Panitia** dengan dua kontak WhatsApp:
+  - Panitia Utama untuk informasi perlombaan
+  - Wakil Panitia Utama untuk pendaftaran dan bantuan
+- Tautan Instagram resmi `@intelligentscout_3`
+- Layar loading dengan progres animasi
+- Animasi ikon dan ilustrasi Pramuka mengambang
+- Efek hover dan focus pada tombol serta tautan
+- Tampilan responsif untuk desktop, tablet, dan smartphone
+- Dukungan `prefers-reduced-motion` serta navigasi keyboard dasar
 
-* ⚜️ Informasi **Juklak & Juknis Perlombaan**
-* 📝 Link pendaftaran lomba
-* 🏕️ Pendaftaran **Lomba Paskat**
-* 🪢 Pendaftaran **Lomba Mini Pionering**
-* 🚩 Pendaftaran **Lomba Dance Semaphore**
-* 💬 Kontak panitia melalui WhatsApp
-* 📸 Akses media sosial Instagram
-* ✨ Animasi ikon Pramuka
-* 🖱️ Efek hover pada tombol
-* 📱 Tampilan responsif untuk perangkat mobile
-* ♿ Dukungan dasar untuk keyboard accessibility
+## Teknologi
 
----
+- **HTML5** untuk struktur halaman
+- **CSS3** untuk layout responsif, gradient, glassmorphism, shadow, dan animasi
+- **JavaScript vanilla** untuk layar loading, animasi ikon, dan modal WhatsApp
+- **SVG inline** untuk ikon WhatsApp dan Instagram
 
-## 🎨 Design
+Tidak ada framework, package manager, atau proses build yang diperlukan.
 
-Website menggunakan perpaduan warna yang terinspirasi dari identitas kegiatan Pramuka:
-
-* 🟢 Dark Green
-* 🟢 Green
-* 🟩 Lime
-* 🟡 Yellow
-* ⚪ White
-
-Desain menggunakan efek **gradient**, **glassmorphism**, rounded card, shadow, dan animasi untuk memberikan tampilan yang modern.
-
----
-
-## 🛠️ Teknologi
-
-Website ini dibuat menggunakan:
-
-* **HTML5** — Struktur halaman
-* **CSS3** — Styling, responsive design, gradient, animation, dan layout
-* **JavaScript** — Interaksi dan fitur WhatsApp modal
-* **SVG** — Icon media sosial dan WhatsApp
-
----
-
-## 📂 Struktur Project
+## Struktur Project
 
 ```text
-Competition-Intelligent-Scout-2/
-│
-├── Competition Intelligent Scout 2.html
+Competition-Intelligent-Scout-3/
+├── index.html
 ├── juknis.html
 ├── Proyek Baru 503 (logo cis there) [39A0A50].png
 └── README.md
 ```
 
-> Struktur file dapat disesuaikan dengan isi repository yang digunakan.
+## Menjalankan Project
 
----
+Karena project ini berupa website statis, halaman dapat dibuka langsung dengan browser:
 
-## 📱 Responsiveness
+1. Buka file `index.html`.
+2. Pastikan file `juknis.html` dan file logo berada di folder yang sama.
+3. Gunakan tombol pada halaman untuk membuka formulir Google, Instagram, atau kontak WhatsApp.
 
-Website dirancang agar dapat digunakan pada berbagai ukuran layar, mulai dari desktop hingga smartphone.
+Untuk pengalaman pengembangan yang lebih baik, project juga dapat dijalankan menggunakan ekstensi **Live Server** di VS Code.
 
-Tampilan akan menyesuaikan ukuran:
+## Kontak Panitia
 
-```text
-💻 Desktop
-   ↓
-📱 Tablet
-   ↓
-📱 Smartphone
-```
+Menu WhatsApp pada halaman utama menyediakan:
 
----
+- **Panitia Utama** — `+62 819-1079-3125` untuk informasi perlombaan
+- **Wakil Panitia Utama** — `+62 821-1855-0966` untuk pendaftaran dan bantuan
 
-## 💬 Kontak Panitia
+## Lisensi
 
-Website menyediakan fitur **Hubungi Panitia** yang memungkinkan pengunjung memilih kontak WhatsApp melalui sebuah modal.
+Project ini dibuat untuk mendukung kegiatan **Competition Intelligent Scout 3**.
 
-Tersedia beberapa pilihan kontak berdasarkan kebutuhan, seperti:
-
-* Informasi perlombaan
-* Pendaftaran dan bantuan
-
----
-
-## 🚀 Tujuan Project
-
-Project ini dibuat sebagai media digital untuk mendukung pelaksanaan **Competition Intelligent Scout 2**, sehingga informasi perlombaan dapat disampaikan dengan lebih mudah, terstruktur, dan menarik kepada calon peserta.
-
----
-
-## 👨‍💻 Developer
-
-<p align="center">
-  <img src="WhatsApp Image 2026-08-19 at 20.01.42.jpeg" width="150" alt="Foto Muhammad Sayyid Ghifari">
-</p>
-
-<p align="center">
-  <b>Muhammad Sayyid Ghifari</b><br>
-  Student of PPLG — Pengembangan Perangkat Lunak dan Gim
-</p>
----
-
-## 📄 License
-
-Project ini dibuat untuk kebutuhan kegiatan **Competition Intelligent Scout 2**.
-
-© 2026 Competition Intelligent Scout 2
+© 2026 Competition Intelligent Scout 3
 **Kreativitas • Inovasi • Solidaritas**
